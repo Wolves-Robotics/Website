@@ -1,277 +1,348 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Wolves Robotics</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-.mySlides {display:none}
-.w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-</style>
-</head>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("images\robot.png");
+      min-height: 100%;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+    </style>
+  </head>
 <body>
 
-<!-- Links (sit on top) -->
-<div class="w3-top w3-card-4 w3-dark-gray">
-  <div class="w3-row w3-large w3-dark-gray">
-
-    <div class="w3-col s1">
-      <img src="images\LOGO-removebg-preview.png" alt="Logo" style="width:40%">
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-dark-gray">Home</a>
-    </div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
 
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-dark-gray">About</a>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+  </div>
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i style="text-decoration:none;font-size: 30px;" href="https://www.google.com/search?q=facebook&oq=facebo&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYxwEY0QMYgAQYigUyBggCEEUYQDIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD2oAgCwAgA&sourceid=chrome&ie=UTF-8" target="_blank" class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i style="text-decoration:none;font-size: 30px;" href="https://www.instagram.com/5189wolvesrobotics/" target="_blank" class="fa fa-instagram w3-hover-opacity"></i>
+  <i style="text-decoration:none;font-size: 30px;" href="https://www.youtube.com/channel/UCJMdMo_WJkvP2d_T1X7qpKw" target="_blank" class="fa fa-youtube w3-hover-opacity"></i>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT THE COMPANY</h3>
+  <p class="w3-center w3-large">Key features of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
-    <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block w3-dark-gray">Contact</a>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
   </div>
 </div>
 
-<!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:40px;margin-bottom:80px">
-
-  <div class="w3-panel" style="text-align:center;">
-    <H1 style="margin-bottom:1px;font-size: 60px;"><b3>Wolves Robotics</b3></H1>
-    <div class="w3-col s30" style=margin-top:1px>
-    <img src="images\LOGO-removebg-preview.png" alt="Logo" style="width:30%"> </img>
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>We know design.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
     </div>
-    <h5 class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" ><strong  style="font-size: 21px" >An FTC competing team from San Antonio, TX</strong></h5>
-  </div>
-
-  <!-- Slideshow -->
-  <div class="w3-container">
-    <div class="w3-display-container mySlides" style="text-align:center;">
-      <img src="images\Screenshot 2023-11-21 024640.png" style="width:75%;margin:0 auto;"></img>
-      <div class="w3-display-middle w3-container w3-padding-32 w3-card-4">
-        <span class="w3-gray w3-padding-large w3-animate-bottom w3-card-4">Design award at Tournament</span>
-      </div>
-    </div>
-    <div class="w3-display-container mySlides" style="text-align:center;">
-      <img src="images\Screenshot 2023-11-21 024603.png" style="width:75%;margin:0 auto;"></img>
-      <div class="w3-display-middle w3-container w3-padding-32;">
-        <span class="w3-gray w3-padding-large w3-animate-bottom;">Logan at Practice</span>
-      </div>
-    </div>
-    <div class="w3-display-container mySlides" style="text-align:center;">
-      <img src="images\Screenshot 2023-11-21 024733.png" style="width:75%;margin:0 auto;"></img>
-      <div class="w3-display-middle w3-container w3-padding-32;w3-card-4">
-        <span class="w3-gray w3-padding-large w3-animate-bottom;w3-card-4">NASA Event</span>
-      </div>
-    </div>
-
-    <!-- Slideshow next/previous buttons -->
-    <div class="w3-container w3-black w3-padding w3-xlarge" style="width:75%;margin:0 auto;">
-      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-
-      <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-      </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="https://www.w3schools.com/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
     </div>
   </div>
+</div>
 
-  <!-- Grid -->
-    <div class="w3-row-padding w3-light-gray" id="about">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">About Our Team</span>
-    </div>
-    <h3>
-      <center>
-    <b style="font-size: 18px">
-         We are Wolves Robotics, an FTC community team from San Antonio, Texas. We are comprised of three friends who share a passion for robotics, with each wielding their own specialties. Being a community team lets us bring on whoever we want, and allows us to take control of being the best team we can. We strive to succeed alongside all the amazing teams around us. Our belief is that teamwork goes beyond individual teams.
-      </b>
-</center>
-</h3  >
-  </div>
-  <div class="w3-row-padding w3-light-gray" style="text-align:center;" id="aboutt">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Our Mission</span>
-    </div>
-      <h3>
-        <center>
-        <b style="font-size: 18px">
-          Our most valuable asset is every team that we compete alongside with. The connections we make through our journey defines us and the teams around us. Wolves Robotics’ mission is to show the world what is possible when everyone works together in a big community filled of great minds, and how gracious professionalism optimistically effects all teams! We know that when we strive together, our community becomes stronger and more inspiring to others.
-        </b>
-  </center>
-</h3>
-  </div>
-
-  <!-- Grid -->
-
-  <!-- Grid -->
-<div id="members">
-  <form class="w3-light-gray " action="/action_page.php" target="_blank">
-  <div class="w3-row-padding" id="aboout">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images\IMG_8848.jpg" alt="Kota" style="width:100%">
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+  <p class="w3-center w3-large">The ones who runs this company</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John" style="width:100%">
         <div class="w3-container">
-          <h3>Kota</h3>
-          <p class="w3-opacity">CAD Design and Build</p>
-          <p>Kota  is an expert 3D modeler, who spends his free time helping out fellow FTC teams, while also being one of the builders.</p>
-            <p><b class="w3-opacit"><center>“The Guy”</center></b></p>
+          <h3>John Doe</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images\IMG_8849.jpg" alt="Logan" style="width:100%">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:100%">
         <div class="w3-container">
-          <h3>Logan</h3>
-          <p class="w3-opacity">Software</p>
-          <p>Logan just sits all day, and stares at the screen until things maybe happen. He is a programming genius and has the worst jokes.</p>
-            <p><b class="w3-opacit"><center>“A Guy”</center></b></p>
+          <h3>Anja Doe</h3>
+          <p class="w3-opacity">Art Director</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="images\IMG_8850.jpg" alt="Yusuf" style="width:100%">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike" style="width:100%">
         <div class="w3-container">
-          <h3>Yusuf</h3>
-          <p class="w3-opacity">Build and Outreach</p>
-          <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-          <p><b class="w3-opacit"><center>“Guy”</center></b></p>
+          <h3>Mike Ross</h3>
+          <p class="w3-opacity">Web Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="https://www.w3schools.com/w3images/team4.jpg" alt="Dan" style="width:100%">
+        <div class="w3-container">
+          <h3>Dan Star</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
   </div>
-</form>
 </div>
 
-<div id="members">
-  <form class="w3-light-gray " action="/action_page.php" target="_blank">
-  <div class="w3-row-padding" id="aboout">
-
-    <div class="w3-third w3-margin-bottom">
-     <div class="w3-card-4">
-       <img src="images\Destiny.jpg" alt="Destiny" style="width:100%">
-       <div class="w3-container">
-         <h3>Destiny</h3>
-         <p class="w3-opacity">Build and Outreach</p>
-         <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-         <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-       </div>
-     </div>
-   </div>
-
- <div class="w3-third w3-margin-bottom">
-   <div class="w3-card-4">
-     <img src="images\Joshua.jpg" alt="Joshua" style="width:100%">
-     <div class="w3-container">
-       <h3>Joshua</h3>
-       <p class="w3-opacity">Build and Outreach</p>
-       <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-       <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-     </div>
-   </div>
- </div>
-
-
- <div class="w3-third w3-margin-bottom">
-   <div class="w3-card-4">
-     <img src="images\Paige.png" alt="Yusuf" style="width:100%">
-     <div class="w3-container">
-       <h3>Yusuf</h3>
-       <p class="w3-opacity">Build and Outreach</p>
-       <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-       <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-     </div>
-   </div>
- </div>
-
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">14+</span>
+    <br>Partners
   </div>
-  </form>
-</div>
-
-<div id="awards">
-  <div class="w3-center w3-padding-64 w3-light-gray" >
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Our Awards</span>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">55+</span>
+    <br>Projects Done
   </div>
-  <h class="w3-light-gray">
-    <center  class="w3-light-gray">
-    <b style="font-size: 18px">
-      SA Semi Area 2nd Inspire and Think awards 2023-2024
-    </b>
-  </center>
-  <center  class="w3-light-gray">
-    <b style="font-size: 25px">
-    . . .
-  </b>
-  </center>
-  <h class="w3-light-gray">
-    <center  class="w3-light-gray">
-    <b style="font-size: 18px">
-      HSAT $ SST League Tournament Design Award 2023-2024
-    </b>
-  </center>
-  <center  class="w3-light-gray">
-    <b style="font-size: 25px">
-    . . .
-  </b>
-  </center>
-  <center  class="w3-light-gray">
-  <b style="font-size: 18px">
-    90 SSTallions League Innovate Award 2022-2023
-  </b>
-</center>
-</h3>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">89+</span>
+    <br>Happy Clients
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">150+</span>
+    <br>Meetings
+  </div>
 </div>
 
-  <!-- Contact -->
-  <div class="w3-center w3-padding-64 w3-light-gray" id="contact">
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">OUR WORK</h3>
+  <p class="w3-center w3-large">What we've done for people</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+    </div>
   </div>
 
-  <form class="w3-container w3-light-gray " action="/action_page.php" target="_blank">
-    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-      <a style="font-size: 25px;" href="https://www.youtube.com/channel/UCJMdMo_WJkvP2d_T1X7qpKw" target="_blank">Youtube</a>
-      <p><b>@WolvesRobotics</b> for videos and more</p>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
     </div>
-
-    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-        <a style="font-size: 25px;" href="https://www.instagram.com/5189wolvesrobotics/" target="_blank">Instagram</a>
-      <p><b>@5189WolvesRobotics</b> for updates and to connect to our team!</p>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
     </div>
-
-    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-  <a style="font-size: 25px;" href="https://www.google.com/search?q=facebook&oq=facebo&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYxwEY0QMYgAQYigUyBggCEEUYQDIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD2oAgCwAgA&sourceid=chrome&ie=UTF-8" target="_blank">Facebook</a>
-      <p>coming soon for updates and progress</p>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
     </div>
-
-    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-    <a style="font-size: 25px;" target="_blank">Email</a>
-      <p><b>5189wolvesrobotics@gmail.com</b> to talk to us regarding sponsorships and events.</p>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
     </div>
-
-
-    <div class="w3-center w3-light-grey w3-container w3-padding-16">
-    <a style="font-size: 35px;" href="https://www.gofundme.com/f/wolves-robotics?utm_campaign=p_cf+share-flow-1&utm_medium=chat&utm_source=whatsapp" target="_blank">GoFundMe</a>
-      <p style="font-size: 25px">Donate through our GoFundMe to support us through our journey, and become a part of the Wolves Robotics family as well!</p>
-    </div>
-  </form>
+  </div>
 </div>
 
-<!-- Footer -->
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
 
+<!-- Skills Section -->
+<div class="w3-container w3-light-grey w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>Our Skills.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+      tempor incididunt ut labore et dolore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+      tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-col m6">
+      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Photography</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing Section -->
+<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
+  <h3>PRICING</h3>
+  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16"><b>10GB</b> Storage</li>
+        <li class="w3-padding-16"><b>10</b> Emails</li>
+        <li class="w3-padding-16"><b>10</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">$ 10</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
+        <li class="w3-padding-16"><b>25GB</b> Storage</li>
+        <li class="w3-padding-16"><b>25</b> Emails</li>
+        <li class="w3-padding-16"><b>25</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">$ 25</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+        <li class="w3-padding-16"><b>50GB</b> Storage</li>
+        <li class="w3-padding-16"><b>50</b> Emails</li>
+        <li class="w3-padding-16"><b>50</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">$ 50</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+    <!-- Image of location/map -->
+    <img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+  </div>
+</div>
+
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
 <footer class="w3-container w3-padding-32 w3-black w3-center">
   <h4><b>"The San Antonio Community Team"</b></h4>
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -283,75 +354,32 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"  target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
-
 <script>
-// Slideshow
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
 }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demodots");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-white";
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
 }
 </script>
 
 </body>
 </html>
-<!--
-   <div class="w3-third w3-margin-bottom">
-    <div class="w3-card-4">
-      <img src="images\Destiny.jpg" alt="Destiny" style="width:100%">
-      <div class="w3-container">
-        <h3>Destiny</h3>
-        <p class="w3-opacity">Build and Outreach</p>
-        <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-        <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="w3-third w3-margin-bottom">
-  <div class="w3-card-4">
-    <img src="images\Joshua.jpg" alt="Joshua" style="width:100%">
-    <div class="w3-container">
-      <h3>Joshua</h3>
-      <p class="w3-opacity">Build and Outreach</p>
-      <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-      <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="w3-third w3-margin-bottom">
-  <div class="w3-card-4">
-    <img src="images\Paige.png" alt="Yusuf" style="width:100%">
-    <div class="w3-container">
-      <h3>Yusuf</h3>
-      <p class="w3-opacity">Build and Outreach</p>
-      <p>Yusuf takes care of outreach, as well as  is one of the builders for the team. He can apparently graphically design.</p>
-      <p><b class="w3-opacit"><center>“Guy”</center></b></p>
-    </div>
-  </div>
-</div>
--->
