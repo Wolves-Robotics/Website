@@ -118,3 +118,11 @@ placeholders.forEach((img) => {
   img.src = `https://via.placeholder.com/${width}x${height}/121212/FFFFFF?text=Robotics+Team`
 })
 
+function loadFooter() {
+  fetch('/partials/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+}
+window.onload = loadFooter;
