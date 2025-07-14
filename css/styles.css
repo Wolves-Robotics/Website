@@ -504,7 +504,7 @@ ul {
 }
 
 .achievement-card {
-  background-color: var(--black);
+  background-color: var(--gray-900);
   padding: 32px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1241,6 +1241,15 @@ ul {
 
 .faq-item p {
   color: var(--gray-400);
+}
+
+.faq-item a {
+  color: var(--blue-500);
+  
+}
+
+.faq-item a:hover {
+  text-decoration: underline;
 }
 
 /* Media Queries */
