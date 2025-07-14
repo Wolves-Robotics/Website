@@ -57,6 +57,13 @@ ul {
   padding: 0 20px;
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid;
+  padding: 10px;
+}
+
 .section {
   padding: 80px 0;
 }
@@ -706,6 +713,13 @@ ul {
   margin: 0 auto 16px;
 }
 
+.member-image2 {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  margin: 0 auto 16px;
+}
+
 .team-member h4 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -758,13 +772,14 @@ ul {
 
 /* Team Members Grid */
 .team-members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 64px;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 
 .team-member {
   text-align: center;
@@ -1042,13 +1057,24 @@ ul {
   align-items: center;
   
 }
-*/
+
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column size */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  Adjust column size 
   gap: 24px;
   margin-bottom: 60px;
+  
 }
+*/
+.contact-cards {
+  display: flex;
+  justify-content: center; /* centers items horizontally */
+  gap: 24px;
+  margin-bottom: 60px;
+  flex-wrap: wrap; /* wrap if more items are added */
+  
+}
+
 
 .contact-card {
   display: flex; /* Enables flexbox */
@@ -1060,6 +1086,7 @@ ul {
   border-radius: 8px;
   text-align: center;
   min-height: 100%; /* Ensures equal height */
+  width: 400px;
 }
 
 .contact-icon {
