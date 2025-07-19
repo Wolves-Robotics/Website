@@ -3,14 +3,14 @@
 
 This is the official website for **Wolves Robotics FTC Team 5189**. It serves as our public platform to share our mission, members, outreach, and competition journey. The site was built and maintained by team members to represent our work to judges, the community, and potential sponsors.
 
-[Visit the live site →](https://5189wolvesrobotics.com)
+Visit the live site → [5189wolvesrobotics.com](https://5189wolvesrobotics.com)
 
 ---
 
 ## Built With
 
 - HTML5 / CSS3 / JavaScript
-- [Google Fonts](https://fonts.google.com/)
+- GitHub Pages with custom domain
 
 ---
 
