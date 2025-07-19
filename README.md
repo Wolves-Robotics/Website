@@ -40,8 +40,8 @@ This site was developed and maintained by:
 
 ## License
 
-This repository is for informational and team use only. Contributions are currently not open to the public.
-© 2025 5189 Wolves Robotics. All rights reserved.
+- This repository is for informational and team use only. Contributions are currently not open to the public.
+- © 2025 5189 Wolves Robotics. All rights reserved.
 
 ---
 
