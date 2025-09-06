@@ -26,6 +26,11 @@
 
 html {
   scroll-behavior: smooth;
+  min-width: 320px; 
+  overflow-x: hidden;
+
+
+
 }
 
 body {
@@ -57,6 +62,25 @@ ul {
   padding: 0 20px;
 }
 
+.links {
+  color: var(--blue-500);
+  text-decoration: underline;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-wide h2{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  justify-self: center;
+}
+
 .center {
   margin: auto;
   width: 50%;
@@ -68,10 +92,18 @@ ul {
   padding: 80px 0;
 }
 
-.section-dark {
-  background-color: var(--gray-900);
+.section-pages {
+  padding: 80px 0;
+  padding-top: 8%;
 }
 
+.section-dark {
+  background-color: var(--gray-800);
+}
+
+.section-blue {
+  background-color: var(--blue-900);
+}
 .section-blue {
   background-color: var(--blue-900);
 }
@@ -168,13 +200,13 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
+  background-color:   rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
   align-items: center;
   height: 80px;
 }
@@ -186,25 +218,45 @@ ul {
 }
 
 .logo img {
-  width: 12%;
-  height: auto;
+  width: 19%;
+  height:max-content;
   border-radius: 50%;
+  min-width: 75px;
 }
 
 .logo span {
   font-size: 1.25rem;
   font-weight: 700;
+  white-space: nowrap;
+  padding-right: 40px;
+
 }
 
 .desktop-nav {
   display: none;
+  white-space: nowrap;
+  padding-right: 5%;  
+  
 }
 
 .desktop-nav a {
-  padding: 8px 16px;
+  padding: 8px 24px;
+  
   color: var(--white);
   font-weight: 500;
   font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 1090px) {
+  @media (min-width: 901px) {
+    .desktop-nav {
+      padding-left: 20px;
+    }
+    .desktop-nav a {
+      padding: 8px 9px;
+    }
+  }
 }
 
 .desktop-nav a:hover,
@@ -212,11 +264,12 @@ ul {
   color: var(--blue-500);
 }
 
+
 .desktop-nav a.btny {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+  /*padding: 8px 16px;*/
   border-radius: 4px;
   font-weight: 500;
   transition: var(--transition);
@@ -227,6 +280,10 @@ ul {
   color: var(--blue-900);
   width: 15%;
 }
+
+/*.desktop-nav a.long {
+  padding: 8px 16px;
+}*/
 
 
 .mobile-menu-btn {
@@ -380,14 +437,14 @@ ul {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
 
   .mobile-menu-btn {
 
     display: none;
 
   }
-
+  
 
 
   .desktop-nav {
@@ -409,6 +466,7 @@ ul {
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden; 
 }
 
 .hero-image {
@@ -420,21 +478,20 @@ ul {
 .hero-image img {
   width: 100%;
   height: 100%;
+  
   object-fit: cover;
-  filter: grayscale(100%); /* Start as grayscale */
-  transition: filter 1s ease-in-out; /* Smooth transition */
+  
 }
-
-.hero-image img:hover {
-  filter: grayscale(0%); /* Fade to color on hover */
-} 
-
+ 
+/*
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background-color: rgb(0, 0, 0);
   animation: hero-overlay 1s ease-in-out forwards;
+  opacity: var(--overlay-opacity);
+
 }
 
 @keyframes hero-overlay {
@@ -442,6 +499,31 @@ ul {
     background-color: rgba(0, 0, 0, 0.1);
   }
 }
+*/
+
+:root {
+  --overlay-alpha: 0.1; /* match your fade-in target */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, var(--overlay-alpha));
+  animation: hero-overlay-fadein 1s ease-in-out forwards;
+  transition: background-color 0.2s ease-out;
+}
+
+@keyframes hero-overlay-fadein {
+  from {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  to {
+    background-color: rgba(0, 0, 0, var(--overlay-alpha));
+  }
+}
+
+
 
 /*
 .hero-overlay:hover {
@@ -456,23 +538,65 @@ ul {
 .hero-content {
   position: absolute;
   z-index: 2;
-  padding: 6% 20px;
+  padding: 8% 20px;
   top: 0;
   
   
 }
 
-@media (max-width: 768px) { /* Adjust for mobile screens */
+@media (max-width: 900px) { /* Adjust for mobile screens */
   .hero-content {
     position: absolute;
     z-index: 2;
-    padding: 20% 20px;
+    padding: 150px 20px;
     top: 0;
+    height: var(--vh, 100vh);
+    overflow: hidden;
+
   }
+
+  .hero-content h1 {
+    font-size: clamp(12px, 6vw, 32px);
+    white-space: nowrap;
+  }
+  .hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  
+  
+  }
+  .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  
+  }
+  .logo img {
+  width: 30%;
+  max-width: 100px;
+  height: 30%;
+  border-radius: 50%;
+  }
+  
+  .logo span {
+  /*font-size: 1.8rem;*/
+  font-size: clamp(12px, 6vw, 32px);
+  font-weight: 700;
+  white-space: nowrap;
+  
+  
+
+}
+
+.footer-links {
+  display: none;
+}
+
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 8px;
   
@@ -513,7 +637,8 @@ ul {
 
 /* Page Hero */
 .page-hero {
-  background: linear-gradient(to bottom, var(--blue-900), var(--black));
+  /*background: linear-gradient(to bottom, var(--blue-900), var(--blue-900), var(--blue-900), var(--blue-900), var(--black));*/
+  background-color: var(--blue-900);
   padding: 120px 0 60px;
   text-align: center;
 }
@@ -557,7 +682,7 @@ ul {
 }
 
 .achievement-card {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 32px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -607,7 +732,7 @@ ul {
 
 /* Footer */
 .footer {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 60px 0 20px;
 }
 
@@ -790,7 +915,7 @@ ul {
 }
 
 .mentor-card {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 24px;
   border-radius: 8px;
 }
@@ -879,7 +1004,7 @@ ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 32px;
   border-radius: 8px;
 }
@@ -1008,7 +1133,7 @@ ul {
 }
 
 .award-card {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 24px;
   border-radius: 8px;
 }
@@ -1067,7 +1192,7 @@ ul {
 }
 
 .impact-card {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 32px;
   border-radius: 8px;
 }
@@ -1102,7 +1227,7 @@ ul {
 }
 
 .contact-card {
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 32px;
   border-radius: 8px;
   text-align: center;
@@ -1134,12 +1259,40 @@ ul {
   flex-direction: column; /* Stacks content vertically */
   justify-content: center; /* Centers content */
   align-items: center;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   padding: 32px;
   border-radius: 8px;
   text-align: center;
   min-height: 100%; /* Ensures equal height */
   width: 300px;
+}
+
+.contact-cardy {
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Stacks content vertically */
+  justify-content: center; /* Centers content */
+  align-items: center;
+  background-color: var(--gray-800);
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 100%; /* Ensures equal height */
+  width: 300px;
+}
+
+@media (max-width: 900px) {
+  .contact-cardy {
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Stacks content vertically */
+  justify-content: center; /* Centers content */
+  align-items: center;
+  background-color: var(--gray-800);
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 100%; /* Ensures equal height */
+  width: 150px;
+}
 }
 
 .contact-icon {
@@ -1155,6 +1308,12 @@ ul {
 }
 
 .contact-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contact-cardy h3 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 16px;
@@ -1216,7 +1375,7 @@ ul {
 .form-group select,
 .form-group textarea {
   padding: 12px;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   border: 1px solid var(--gray-700);
   border-radius: 4px;
   color: var(--white);
@@ -1264,7 +1423,7 @@ ul {
 .placeholder-map {
   width: 100%;
   height: 100%;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1306,7 +1465,7 @@ ul {
 }
 
 /* Media Queries */
-@media (min-width: 640px) {
+@media (min-width: 1029px) {
   .cta-buttons {
     flex-direction: row;
     justify-content: center;
@@ -1321,7 +1480,7 @@ ul {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .section-header h2 {
     font-size: 3rem;
   }

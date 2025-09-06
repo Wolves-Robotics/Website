@@ -118,3 +118,34 @@ placeholders.forEach((img) => {
   img.src = `https://via.placeholder.com/${width}x${height}/121212/FFFFFF?text=Robotics+Team`
 })
 
+window.addEventListener('scroll', function() {
+  const heroImage = document.getElementById('parallax-hero'); 
+  const heroContent = document.getElementById('parallax-hero-content'); 
+  const scrollPosition = window.pageYOffset;
+  const minAlpha = 0.1;
+  const maxAlpha = 0.8;
+  const scrollRange = 600;
+
+
+  // Adjust the multiplier to control the parallax speed (smaller = slower)
+  heroImage.style.transform = 'translateY(' + -scrollPosition * -0.5 + 'px)';
+  heroContent.style.transform = 'translateY(' + -scrollPosition * -0.65 + 'px)';
+
+
+  
+  // Adjust overlay darkness (opacity)
+  // Clamp scroll-based opacity between 0.3 and 0.8
+  let newAlpha = minAlpha + Math.min(scrollPosition / scrollRange, 1) * (maxAlpha - minAlpha);
+  document.documentElement.style.setProperty('--overlay-alpha', newAlpha.toFixed(2));
+
+});
+
+function setViewportHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', setViewportHeight);
+setViewportHeight(); // call on page load
+
