@@ -94,7 +94,13 @@ ul {
 
 .section-pages {
   padding: 80px 0;
-  padding-top: 8%;
+
+}
+
+.section-pages {
+  padding: 90px 0;
+  padding-top: 200px;
+
 }
 
 .section-dark {
@@ -203,6 +209,13 @@ ul {
   background-color:   rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
 }
+canvas {
+      image-rendering: pixelated; /* ensures blocks stay crisp */
+      width: 100%;
+  height: 100%;
+  
+  object-fit: cover;
+    }
 
 .header-content {
   display: flex;
@@ -593,12 +606,17 @@ ul {
   display: none;
 }
 
+.section-pages {
+  padding: 80px 0;
+}
+
 }
 
 .hero-content h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: #1e1e1e;
   
 }
 
@@ -606,6 +624,7 @@ ul {
   font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto 32px;
+  color: #1e1e1e;
 }
 
 .scroll-indicator {

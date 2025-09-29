@@ -149,3 +149,41 @@ window.addEventListener('resize', setViewportHeight);
 window.addEventListener('orientationchange', setViewportHeight);
 setViewportHeight(); // call on page load
 
+   const canvas = document.getElementById("pixelCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const img = new Image();
+    img.src = "images/light.png"; // change to your image path
+
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      drawPixelated(20); // initial block size
+    };
+
+    function drawPixelated(pixelSize) {
+      const w = canvas.width;
+      const h = canvas.height;
+
+      // step 1: draw at tiny resolution
+      const smallW = Math.ceil(w / pixelSize);
+      const smallH = Math.ceil(h / pixelSize);
+
+      // draw the small image
+      ctx.drawImage(img, 0, 0, smallW, smallH);
+
+      // step 2: stretch it back up (pixelated)
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(canvas, 0, 0, smallW, smallH, 0, 0, w, h);
+    }
+
+    // update pixel size on scroll
+    window.addEventListener("scroll", () => {
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const progress = window.scrollY / maxScroll;
+
+      // block size: bigger = more pixelated, smaller = clearer
+      //const pixelSize = Math.max(1, Math.floor(40 - progress * 1));
+      const pixelSize = 20 + Math.floor(progress*100);
+      drawPixelated(pixelSize);
+        });
