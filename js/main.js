@@ -123,7 +123,7 @@ window.addEventListener('scroll', function() {
   const heroContent = document.getElementById('parallax-hero-content'); 
   const scrollPosition = window.pageYOffset;
   const minAlpha = 0.1;
-  const maxAlpha = 0.8;
+  const maxAlpha = 0.6;
   const scrollRange = 600;
 
 
@@ -153,8 +153,7 @@ setViewportHeight(); // call on page load
     const ctx = canvas.getContext("2d");
 
     const img = new Image();
-    img.src = "images/light.png"; // change to your image path
-
+    img.src = "images/light.png"
     img.onload = () => {
       canvas.width = img.width;
       canvas.height = img.height;
@@ -184,6 +183,9 @@ setViewportHeight(); // call on page load
 
       // block size: bigger = more pixelated, smaller = clearer
       //const pixelSize = Math.max(1, Math.floor(40 - progress * 1));
-      const pixelSize = 20 + Math.floor(progress*100);
+      const pixelSize = 20 + Math.floor(progress*200);
+      if (pixelSize<20) {
+        pixelSize=20;
+      }
       drawPixelated(pixelSize);
         });
