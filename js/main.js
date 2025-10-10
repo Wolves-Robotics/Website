@@ -123,7 +123,7 @@ window.addEventListener('scroll', function() {
   const heroContent = document.getElementById('parallax-hero-content'); 
   const scrollPosition = window.pageYOffset;
   const minAlpha = 0.1;
-  const maxAlpha = 0.8;
+  const maxAlpha = 0.5;
   const scrollRange = 600;
 
 
