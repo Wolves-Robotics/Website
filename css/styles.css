@@ -659,7 +659,13 @@ canvas {
     overflow: hidden;
 
   }
-
+  
+  .resource:hover .resource-inner {
+    transform: none;
+  }
+  .resource img:hover {
+    filter: brightness(100%);
+  }
   .hero-content h1 {
     font-size: 3rem;
     white-space: nowrap;
@@ -688,9 +694,6 @@ canvas {
   font-size: clamp(12px, 6vw, 32px);
   font-weight: 700;
   white-space: nowrap;
-  
-  
-
 }
 @media (max-width: 400px) {
 .hero-content h1 {
