@@ -665,6 +665,16 @@ canvas {
     overflow: hidden;
 
   }
+
+
+  .about-grid img {
+    width: 70%;
+    justify-self: center;
+  }
+  .container{
+    justify-items: center;
+
+  }
   
   .resource:hover .resource-inner {
     transform: none;
@@ -686,6 +696,8 @@ canvas {
   width: 100%;
   height: 100%;
   object-fit:cover;
+
+  
   
   }
   /*.logo img {
